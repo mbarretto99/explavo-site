@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Shareable by link only: keep out of search engines until launch -->
+<meta name="robots" content="noindex, nofollow">
+<title>Explavo, explain anything clearly</title>
+<meta name="description" content="Explavo turns an idea, a script, a document or a voice recording into a finished animated explainer video in minutes. Professional, on brand and ready for sign-off.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/PlusJakartaSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css?v=20261025221814">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Icons: Lucide paths, 2px stroke, used through <use> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-idea" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2h4"/><path d="m12 14 3-3"/><circle cx="12" cy="14" r="8"/></symbol>
+    <symbol id="i-audio" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.17 6.81a1 1 0 0 0-3.98-3.99L3.84 16.17a2 2 0 0 0-.5.83l-1.32 4.35a.5.5 0 0 0 .62.62l4.35-1.32a2 2 0 0 0 .83-.5z"/><path d="m15 5 4 4"/></symbol>
+    <symbol id="i-template" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.84-.44-1.13-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.67h2c3.05 0 5.55-2.5 5.55-5.55C21.97 6.01 17.46 2 12 2z"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.41 7.59A1.4 1.4 0 0 1 5.42 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.42a1.4 1.4 0 0 1 .99.41l3.39 3.39a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.36 18.36a9 9 0 0 0 0-12.73"/></symbol>
+    <symbol id="i-ratio" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="12" height="20" x="6" y="2" rx="2"/><rect width="20" height="12" x="2" y="6" rx="2"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
+    <symbol id="i-hat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/><path d="M14 6a6 6 0 0 1 6 6v3"/><path d="M4 15v-3a6 6 0 0 1 6-6"/><rect x="2" y="15" width="20" height="4" rx="1"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-logo" href="./" aria-label="Explavo home"><img src="assets/brand/explavo-lockup-horizontal-colour-light.svg" alt="Explavo" width="103" height="34"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu"><svg aria-hidden="true"><use href="#i-menu"/></svg><span class="sr-only">Menu</span></button>
+    <div class="nav-menu" id="nav-menu">
+      <!-- Tab 1 is this landing page, tab 2 is the existing Style Library (served at /styles/) -->
+      <nav class="tabs" aria-label="Site">
+        <a href="./" aria-current="page">Home</a>
+        <a href="styles/">Style library</a>
+      </nav>
+      <ul class="nav-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#styles">Styles</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#who">Who it's for</a></li>
+      </ul>
+      <div class="nav-actions">
+        <!-- login/ and signup/ forward to the Style Library until auth is built (see serve.py) -->
+        <a class="nav-login" href="login/">Log in</a>
+        <a class="btn btn-primary btn-sm" href="signup/">Start free</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Animated explainer video for teams</p>
+        <h1>explain anything clearly, in minutes.</h1>
+        <p class="lede">Turn an idea, a script, a document or a voice recording into a finished video. On brand, approved by you, ready to ship.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="signup/">Start free</a>
+          <a class="btn btn-ghost" href="styles/">See the styles <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <p class="hero-note">Free plan, no card needed. 7-day trial on paid plans.</p>
+        <p class="belief">Avatars are for messages. Explainers are for understanding.</p>
+      </div>
+
+      <!-- Hero explainer. Plays with sound on request; no autoplay because the narration carries it. -->
+      <figure class="hero-video reveal">
+        <div class="video-frame">
+          <video id="hero-video" src="assets/media/hero-explainer.mp4" poster="assets/media/hero-explainer-poster.jpg" width="1280" height="720" preload="none" playsinline controls aria-label="22-second explainer: why explainer video works"></video>
+          <button class="video-play" type="button" hidden><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>Play with sound <span class="video-len">0:22</span></button>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Who it's for / trust strip. Segment labels stand in until real customer logos exist. -->
+  <div class="strip" id="who">
+    <div class="wrap">
+      <p>Built for people who have to make something understood, not just announced</p>
+      <ul class="segments">
+        <li>Mining and resources</li>
+        <li>Construction</li>
+        <li>Oil and gas</li>
+        <li>Training and L&amp;D</li>
+        <li>Internal comms and change</li>
+        <li>Leadership</li>
+        <li>Professional services</li>
+        <li>Education and public sector</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- The problem -->
+  <section id="problem">
+    <div class="wrap problem-grid">
+      <div class="reveal">
+        <p class="eyebrow">Video debt</p>
+        <h2>you know it should be a video. it never becomes one.</h2>
+        <p class="lede" style="margin-top:16px">Organisations have more to explain than ever. Video is the clearest way to do it, but getting a good explainer made is slow, expensive or simply wrong for the context. So the message goes out as a long email, or an old video stays in circulation because fixing it costs too much.</p>
+        <img src="assets/illustrations/illus-video-debt.svg" alt="A stack of outdated videos, the top one marked version 1 from 2023, next to a clock" width="480" height="360" style="margin-top:32px;max-width:380px">
+      </div>
+      <ul class="pains reveal">
+        <li><span class="x" aria-hidden="true"><svg><use href="#i-x"/></svg></span><p><b>Agencies cost too much and take too long.</b><span>A professional explainer costs thousands and takes four to eight weeks.</span></p></li>
+        <li><span class="x" aria-hidden="true"><svg><use href="#i-x"/></svg></span><p><b>Every update is a new job.</b><span>Change one step, one figure or one name and it means another quote and another delay.</span></p></li>
+        <li><span class="x" aria-hidden="true"><svg><use href="#i-x"/></svg></span><p><b>DIY tools need skills most people don't have.</b><span>Manual timelines, thin asset libraries and slow rendering.</span></p></li>
+        <li><span class="x" aria-hidden="true"><svg><use href="#i-x"/></svg></span><p><b>Avatars don't fit the context.</b><span>An avatar reading a CEO's message or a policy change feels wrong, and it can describe a process but can't show one.</span></p></li>
+        <li><span class="x" aria-hidden="true"><svg><use href="#i-x"/></svg></span><p><b>Brand and approvals are hard to manage.</b><span>Corporate content goes through comms, legal and leadership. Creator tools have no sign-off step.</span></p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">How it works</p>
+        <h2>three ways in. one clear video out.</h2>
+        <p class="lede">Every route leads to the same storyboard, review and render process.</p>
+      </div>
+      <div class="grid grid-3 steps">
+        <article class="card reveal">
+          <span class="icon" aria-hidden="true"><svg><use href="#i-idea"/></svg></span>
+          <span class="step-n">01</span>
+          <h3>Start with an idea</h3>
+          <p>Type what you want to explain, like "explain the hierarchy of controls to new starters". Pick a length, an audience and a tone. Explavo writes a script paced to land on time.</p>
+        </article>
+        <article class="card reveal">
+          <span class="icon" aria-hidden="true"><svg><use href="#i-doc"/></svg></span>
+          <span class="step-n">02</span>
+          <h3>Start with a script or document</h3>
+          <p>Paste your own script and Explavo breaks it into scenes and builds the visuals around your words.</p>
+          <span class="tag">PDF, Word and PowerPoint coming next</span>
+        </article>
+        <article class="card reveal">
+          <span class="icon" aria-hidden="true"><svg><use href="#i-mic"/></svg></span>
+          <span class="step-n">03</span>
+          <h3>Start with a voice recording</h3>
+          <p>Upload a real person: a CEO, a site leader, a consultant. Explavo transcribes it word by word, finds the scene breaks and times the visuals to what they say. No filming.</p>
+        </article>
+      </div>
+
+      <div class="review reveal">
+        <div>
+          <p class="eyebrow">Review before you render</p>
+          <h3>approve every scene before anything renders.</h3>
+          <p>You see each scene's visuals, on-screen text and narration first, so stakeholders sign off early, when mistakes are cheap to fix.</p>
+          <ul class="checks">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Change or regenerate one scene without touching the rest</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Only the changed scene re-renders</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Nothing exports without sign-off</li>
+          </ul>
+        </div>
+        <!-- Code-built storyboard preview (no screenshots exist yet). Decorative controls are spans, not buttons. -->
+        <figure class="mock" aria-label="Example Explavo storyboard: a one-minute toolbox talk on working at heights, with two scenes approved and two in draft" style="margin:0">
+          <div class="mock-bar" aria-hidden="true">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="mock-title">Toolbox talk: working at heights <span>· Storyboard</span></span>
+            <span class="mock-meta">01:00 · 16:9</span>
+          </div>
+          <div class="mock-body" aria-hidden="true">
+            <div class="scene">
+              <div class="thumb"><svg viewBox="0 0 92 58"><rect width="92" height="58" fill="#F3F0FF"/><path d="M30 50V14M54 50V14M30 22h24M30 34h24M30 46h24" stroke="#1F2937" stroke-width="2.5" stroke-linecap="round"/><circle cx="42" cy="22" r="4" fill="#6C5CE7"/><circle cx="30" cy="34" r="4" fill="#6C5CE7"/><circle cx="54" cy="34" r="4" fill="#6C5CE7"/></svg></div>
+              <div><div class="scene-top"><span class="scene-num">01 · 0:00</span><span class="badge approved">Approved</span></div>
+                <p class="scene-onscreen">Three points of contact, every time.</p>
+                <p class="scene-vo">Before you climb, keep two hands and a foot, or two feet and a hand, on the ladder.</p></div>
+            </div>
+            <div class="scene">
+              <div class="thumb"><svg viewBox="0 0 92 58"><rect width="92" height="58" fill="#FFF3EA"/><path d="M46 10v10M34 20h24l-4 28H38z" fill="none" stroke="#1F2937" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 32l5 5 9-10" fill="none" stroke="#6C5CE7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="scene-top"><span class="scene-num">02 · 0:14</span><span class="badge approved">Approved</span></div>
+                <p class="scene-onscreen">Inspect your harness before every shift.</p>
+                <p class="scene-vo">Check the webbing, stitching and buckles. If anything looks wrong, tag it out.</p></div>
+            </div>
+            <div class="scene active">
+              <div class="thumb"><svg viewBox="0 0 92 58"><rect width="92" height="58" fill="#F3F0FF"/><path d="M14 14h64" stroke="#1F2937" stroke-width="3" stroke-linecap="round"/><circle cx="46" cy="14" r="5" fill="#FFA36C" stroke="#1F2937" stroke-width="2"/><path d="M46 19v18" stroke="#6C5CE7" stroke-width="2.5" stroke-dasharray="3 3"/><rect x="38" y="37" width="16" height="12" rx="3" fill="#6C5CE7"/></svg></div>
+              <div><div class="scene-top"><span class="scene-num">03 · 0:29</span><span class="badge draft">Draft</span></div>
+                <p class="scene-onscreen">Anchor above shoulder height.</p>
+                <p class="scene-vo">A higher anchor point shortens the fall and lowers the load on your body.</p>
+                <div class="wave"><i style="height:30%"></i><i style="height:55%"></i><i style="height:80%"></i><i style="height:45%"></i><i style="height:95%"></i><i style="height:60%"></i><i style="height:35%"></i><i style="height:70%"></i><i style="height:100%"></i><i style="height:50%"></i><i style="height:25%"></i><i style="height:65%"></i><i style="height:85%"></i><i style="height:40%"></i><i style="height:60%"></i><i style="height:30%"></i><i style="height:75%"></i><i style="height:45%"></i><i style="height:20%"></i><i style="height:55%"></i></div></div>
+            </div>
+            <div class="scene">
+              <div class="thumb"><svg viewBox="0 0 92 58"><rect width="92" height="58" fill="#FFF3EA"/><circle cx="46" cy="29" r="16" fill="none" stroke="#1F2937" stroke-width="2.5"/><path d="M40 23h12v12H40z" fill="#FFA36C"/></svg></div>
+              <div><div class="scene-top"><span class="scene-num">04 · 0:44</span><span class="badge draft">Draft</span></div>
+                <p class="scene-onscreen">Stop, report and wait for sign-off.</p>
+                <p class="scene-vo">If conditions change, stop work and tell your supervisor before you go back up.</p></div>
+            </div>
+          </div>
+          <div class="mock-foot" aria-hidden="true">
+            <span class="count">2 of 4 scenes approved</span>
+            <span class="btn btn-ghost">Regenerate scene</span>
+            <span class="btn btn-primary">Approve scene</span>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured proof: safety and operational training (first proof segment) -->
+  <section id="safety" style="padding-top:0">
+    <div class="wrap">
+      <div class="proof reveal">
+        <div>
+          <p class="eyebrow">First proof: safety and operational training</p>
+          <h2>show the hazard. don't just talk about it.</h2>
+          <p class="lede">Feed in an incident report, a procedure change or a toolbox talk. Get a clear 2D technical animation that shows the hazard or the process, ready for the next pre-start.</p>
+          <p>Explavo builds scenes from tested layout templates, with industry icon and scene packs for mining, construction and PPE on the way. A talking avatar can tell a crew about a line of fire. An explainer can show it.</p>
+          <p class="founder">Built by Mark Barretto, founder of Oakstar, after 14 years consulting to senior leaders in mining, oil and gas, and construction across Australia, Asia and Africa.</p>
+        </div>
+        <div class="flow" aria-label="From safety document to explainer">
+          <div class="flow-item"><span class="icon warm" aria-hidden="true"><svg><use href="#i-alert"/></svg></span><p><b>Incident report</b><span>or a procedure change, or a toolbox talk</span></p></div>
+          <span class="flow-arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></span>
+          <div class="flow-item"><span class="icon warm" aria-hidden="true"><svg><use href="#i-clipboard"/></svg></span><p><b>Storyboard you approve</b><span>Every claim checked against your source</span></p></div>
+          <span class="flow-arrow" aria-hidden="true"><svg><use href="#i-down"/></svg></span>
+          <div class="flow-item"><span class="icon warm" aria-hidden="true"><svg><use href="#i-hat"/></svg></span><p><b>Clear 2D animation</b><span>Captioned, on brand, ready for the crew</span></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features as outcomes -->
+  <section id="features" class="features" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">What you get</p>
+        <h2>professional video, without the production.</h2>
+      </div>
+      <div class="grid grid-4">
+        <article class="card reveal"><span class="icon" aria-hidden="true"><svg><use href="#i-timer"/></svg></span><h3>It lands on time</h3><p>Choose 30 seconds or 3 minutes. The script is written to fit, using a proven explainer structure.</p></article>
+        <article class="card reveal"><span class="icon" aria-hidden="true"><svg><use href="#i-audio"/></svg></span><h3>Real voice, synced visuals</h3><p>Audio-first mode keeps your leader's own voice and times every scene to it. No filming.</p></article>
+        <article class="card reveal"><span class="icon" aria-hidden="true"><svg><use href="#i-layers"/></svg></span><h3>One story, many styles</h3><p>Switch the whole video to a new style in one click, without rewriting a word.</p></article>
+        <article class="card reveal"><span class="icon" aria-hidden="true"><svg><use href="#i-pencil"/></svg></span><h3>Edit it like a document</h3><p>Change one step, number or name and only that scene re-renders. Videos stay current.</p></article>
+        <article class="card reveal"><span class="icon" aria-hidden="true"><svg><use href="#i-template"/></svg></span><h3>Templates for real work</h3><p>Product explainer, how it works, leadership message, onboarding, change announcement and toolbox talk.</p></article>
+        <article class="card reveal"><span class="icon" aria-hidden="true"><svg><use href="#i-palette"/></svg></span><h3>Your brand, automatically</h3><p>Logo, colours, fonts and intro and outro cards applied to every video.</p></article>
+        <article class="card reveal"><span class="icon" aria-hidden="true"><svg><use href="#i-volume"/></svg></span><h3>Natural voices</h3><p>Australian, British and American AI voices, with music that sits under the narration on its own.</p></article>
+        <article class="card reveal"><span class="icon" aria-hidden="true"><svg><use href="#i-ratio"/></svg></span><h3>Ready anywhere</h3><p>MP4 in 16:9, 9:16 and 1:1, with captions on by default.</p></article>
+
+        <article class="card code-card reveal">
+          <div>
+            <p class="eyebrow">Rendered as code</p>
+            <h3 style="font-size:24px;line-height:1.2">every scene is precise, so every edit is precise.</h3>
+            <p style="margin-top:12px">Explavo renders animation from tested, human-designed style templates, not generative video. That's why output stays consistent and on brand, and why changing one number never regenerates the whole video.</p>
+          </div>
+<pre class="code" tabindex="0" aria-label="Example scene definition"><code><span class="c">// scene 03, edited</span>
+{
+  <span class="k">"id"</span>: <span class="s">"sc_03"</span>,
+  <span class="k">"template"</span>: <span class="s">"process_step"</span>,
+  <span class="k">"on_screen"</span>: <span class="s">"Anchor above shoulder height."</span>,
+  <span class="k">"narration"</span>: <span class="s">"A higher anchor reduces the force."</span>,
+  <span class="k">"duration_s"</span>: 15,
+  <span class="k">"status"</span>: <span class="s">"approved"</span>
+}</code></pre>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Styles -->
+  <section id="styles" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Six ways to explain</p>
+        <h2>one story, told the way your audience needs it.</h2>
+        <p class="lede">Three styles at launch, three more coming next. Switch between them without rewriting anything.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="style-tile reveal"><img src="assets/illustrations/style-whiteboard.svg" alt="Whiteboard style: hand-drawn boxes joined by arrows" width="320" height="200" loading="lazy"><div><h3>Whiteboard <span class="pill now">At launch</span></h3><p>Hand-drawn and familiar. Good for processes and step-by-step training.</p></div></article>
+        <article class="style-tile reveal"><img src="assets/illustrations/style-motion-graphics.svg" alt="2D motion graphics style: flat circle with a tick beside a rounded card" width="320" height="200" loading="lazy"><div><h3>2D motion graphics <span class="pill now">At launch</span></h3><p>Clean, flat and polished. Good for products, strategy and change.</p></div></article>
+        <article class="style-tile reveal"><img src="assets/illustrations/style-kinetic-type.svg" alt="Kinetic typography style: the words explain anything clearly in bold type" width="320" height="200" loading="lazy"><div><h3>Kinetic typography <span class="pill now">At launch</span></h3><p>Words in motion. Good for leadership messages and key takeaways.</p></div></article>
+        <article class="style-tile reveal"><img src="assets/illustrations/style-isometric.svg" alt="Isometric style: two stacked blocks drawn at an angle" width="320" height="200" loading="lazy"><div><h3>Isometric <span class="pill next">Coming next</span></h3><p>Systems, sites and workflows seen from above.</p></div></article>
+        <article class="style-tile reveal"><img src="assets/illustrations/style-voxel.svg" alt="Voxel style: a small pyramid of cubes" width="320" height="200" loading="lazy"><div><h3>Voxel <span class="pill next">Coming next</span></h3><p>Blocky 3D scenes for equipment, layouts and spaces.</p></div></article>
+        <article class="style-tile reveal"><img src="assets/illustrations/style-infographic.svg" alt="Infographic style: a donut chart at 70 percent beside a bar chart" width="320" height="200" loading="lazy"><div><h3>Infographic <span class="pill next">Coming next</span></h3><p>Data and results, explained one number at a time.</p></div></article>
+      </div>
+      <div class="library-link reveal">
+        <p><b>Explore the style library.</b> Browse the full reference library of explainer styles, with sample clips and the prompts behind them.</p>
+        <a class="btn btn-ghost" href="styles/">Open the style library <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials.
+       ILLUSTRATIVE PLACEHOLDERS: these people and quotes are not real customers. They are written as the
+       target buyer personas for layout and must be replaced with real, approved quotes before launch. -->
+  <section id="voices" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">What buyers tell us they need</p>
+        <h2>credible to the crew and the boardroom.</h2>
+      </div>
+      <div class="grid grid-3">
+        <figure class="card quote reveal" style="margin:0">
+          <blockquote>"When a procedure changes I need the video changed this week, not next quarter. If it shows the crew what to do and drops into our LMS, it gets used."</blockquote>
+          <figcaption><b>Priya Nair</b><span>HSE Training Coordinator, iron ore operation, WA</span></figcaption>
+        </figure>
+        <figure class="card quote reveal" style="margin:0">
+          <blockquote>"Our executives won't put their name to an avatar. They will approve a clear, on-brand explainer in their own voice, as long as it goes through review first."</blockquote>
+          <figcaption><b>James Whitlock</b><span>Head of Internal Communications, ASX-listed infrastructure group</span></figcaption>
+        </figure>
+        <figure class="card quote reveal" style="margin:0">
+          <blockquote>"I want my own framework explained in my own voice, before the workshop starts. At a monthly cost I don't have to think about."</blockquote>
+          <figcaption><b>Dan Okafor</b><span>Independent leadership facilitator</span></figcaption>
+        </figure>
+      </div>
+      <p class="illustrative">Illustrative quotes based on our buyer research. Customer stories coming soon.</p>
+    </div>
+  </section>
+
+  <!-- Statistics. INDICATIVE, RE-VERIFY BEFORE USE.
+       US$4.2B: global corporate health and safety training software and content market (TAM), figure as supplied in the build brief; source to be confirmed.
+       Minutes vs weeks: agency timelines of 4 to 8 weeks per Explavo Product Description (Oct 2026).
+       Under US$2 per finished minute: Explavo direct render cost estimate, Product Spec v0.3; agency US$500 to $15,000 per Product Description comparison table. -->
+  <section id="numbers" style="padding-top:0">
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat reveal"><strong>US$4.2B</strong><span>global corporate health and safety training market</span></div>
+        <div class="stat reveal"><strong>minutes</strong><span>to a finished explainer, not the four to eight weeks an agency takes</span></div>
+        <div class="stat reveal"><strong>&lt; US$2</strong><span>direct cost per finished minute, against agency rates of US$500 to $15,000</span></div>
+      </div>
+      <p class="illustrative">Figures are indicative.</p>
+    </div>
+  </section>
+
+  <!-- Pricing: spec v0.3 tiers, priced by finished minutes. Indicative. Items marked "coming next" are V1 in the spec. -->
+  <section id="pricing" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Pricing</p>
+        <h2>priced by finished minutes. no credits.</h2>
+        <p class="lede">Simple and predictable. No multipliers and no surprises. Start free, and every paid plan comes with a 7-day trial.</p>
+      </div>
+      <div class="plans">
+        <article class="plan reveal">
+          <p class="plan-name">Free</p>
+          <p class="price">$0</p><p class="price-note">forever</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>3 videos a month, up to 1 minute</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>720p with watermark</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Launch styles</li>
+          </ul>
+          <a class="btn btn-ghost" href="signup/?plan=free">Start free</a>
+        </article>
+        <article class="plan reveal">
+          <p class="plan-name">Creator</p>
+          <p class="price">$29<small> /mo</small></p><p class="price-note">30 finished minutes</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Launch styles</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>AI voices</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Brand kit</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>1080p</li>
+          </ul>
+          <a class="btn btn-ghost" href="signup/?plan=creator">Start free</a>
+        </article>
+        <article class="plan featured reveal">
+          <p class="plan-name">Pro <span class="plan-flag">Most popular</span></p>
+          <p class="price">$69<small> /mo</small></p><p class="price-note">90 finished minutes</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>All styles</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Audio-first mode</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Captions</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>4K</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Voice cloning, with consent <span class="soon">(coming next)</span></span></li>
+          </ul>
+          <a class="btn btn-primary" href="signup/?plan=pro">Start free trial</a>
+        </article>
+        <article class="plan reveal">
+          <p class="plan-name">Team</p>
+          <p class="price">$59<small> /seat/mo</small></p><p class="price-note">3 seat minimum</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Shared minutes</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Collaboration and approvals <span class="soon">(coming next)</span></span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>SCORM for your LMS <span class="soon">(coming next)</span></span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Translation <span class="soon">(coming next)</span></span></li>
+          </ul>
+          <a class="btn btn-ghost" href="signup/?plan=team">Start free trial</a>
+        </article>
+        <article class="plan reveal">
+          <p class="plan-name">Enterprise</p>
+          <p class="price">Custom</p><p class="price-note">for larger rollouts</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>SSO</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Australian data hosting</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Custom styles</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Industry packs</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Onboarding support</li>
+          </ul>
+          <!-- TODO: point at a real contact address or form once one exists -->
+          <a class="btn btn-ghost" href="signup/?plan=enterprise">Talk to us</a>
+        </article>
+      </div>
+      <p class="pricing-foot">Prices in US dollars and indicative. AUD pricing to be confirmed for Australian customers.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Questions</p>
+        <h2>the hard questions, answered.</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>How do you stop the AI making things up?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p>Scripts are grounded in the material you give Explavo, and claims are flagged against that source. Then a person approves the storyboard before anything renders. Nothing exports without sign-off.</p>
+        </details>
+        <details>
+          <summary>Will this look like generic AI video?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p>No. Explavo renders animation as code from tested, human-designed style templates, so the output stays consistent and on brand. You approve every scene before it renders.</p>
+        </details>
+        <details>
+          <summary>We're an enterprise safety team with procurement and compliance needs.<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p>Storyboard approval and captions are built in. Version history and SCORM packages for your LMS are coming next, and Enterprise adds SSO and Australian data hosting. Start on a single seat and roll out when you're ready.</p>
+        </details>
+        <details>
+          <summary>What if a procedure or figure changes?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p>Change that one scene and only that scene re-renders. Updating a video is as easy as editing a document, so your content doesn't go stale.</p>
+        </details>
+        <details>
+          <summary>Why not just use an avatar tool?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+          <p>An avatar can describe a process but it can't show one. And a talking head reading a policy or a CEO's message feels wrong to a professional audience. Explavo shows the idea.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section style="padding-top:0;padding-bottom:0">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>your next explainer is minutes away.</h2>
+        <p>Start with an idea, a script or a recording. Your first video is free.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-light" href="signup/">Start free</a>
+          <a class="btn btn-outline" href="styles/">See the styles</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/brand/explavo-lockup-horizontal-white.svg" alt="Explavo" width="103" height="34">
+        <p>Professional explainer video for organisations, not avatars for social media.</p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#styles">Styles</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="styles/">Style library</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Account</h3>
+        <ul>
+          <li><a href="login/">Log in</a></li>
+          <li><a href="signup/">Start free</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <!-- Placeholders until the legal pages are written (SaaS/README.md) -->
+        <ul>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Voice-cloning consent policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>&copy; <span id="year">2026</span> Oakstar Pty Ltd. All rights reserved.</span>
+      <span>Your content is yours. It is never used to train AI models.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js?v=20261025221814"></script>
+</body>
+</html>
